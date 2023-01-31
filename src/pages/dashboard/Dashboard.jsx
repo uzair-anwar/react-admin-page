@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  IconButton,
-  Typography,
-  colors,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import React from "react";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
@@ -44,6 +37,7 @@ const Dashboard = () => {
           </Button>
         </Box>
       </Box>
+
       {/* GRID & CHART */}
       <Box
         display="grid"
@@ -218,6 +212,67 @@ const Dashboard = () => {
               </Box>
             </Box>
           ))}
+        </Box>
+
+        {/* ROW 3 */}
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          p="30px"
+        >
+          <Typography variant="h5" fontWeight="600">
+            Campaign
+          </Typography>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mt="25px"
+          >
+            <ProgressCircle size="125" />
+            <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+              sx={{ mt: "15px" }}
+            >
+              $48,345 revenue generated
+            </Typography>
+            <Typography>Includes extra expenditues and costs</Typography>
+          </Box>
+        </Box>
+
+        {/* SALES CHART */}
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+        >
+          <Typography
+            variant="h5"
+            fontWeight="600"
+            sx={{ p: "30px 30px 0 30px" }}
+          >
+            Sales Quantity
+          </Typography>
+          <Box height="250px" mt="-20px">
+            <BarChart isDashboard={true} />
+          </Box>
+        </Box>
+
+        {/* Gepgraphy chart */}
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          p="30px"
+        >
+          <Typography variant="h5" fontWeight="600" sx={{ mb: "15px" }}>
+            Geography Based Traffic
+          </Typography>
+          <Box height="200px">
+            <GeographyChart isDashboard={true} />
+          </Box>
         </Box>
       </Box>
     </Box>
